@@ -14,7 +14,7 @@ class TextPost(models.Model):
 
 
 class HouseUserProfile(models.Model):
-    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name='houseuserprofile', on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
     avatar_url = models.URLField(null=True, blank=True)
 
