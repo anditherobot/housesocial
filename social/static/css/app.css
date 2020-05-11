@@ -5,11 +5,26 @@
 }
 
 .user-list>.avatar {
-    max-width: 50px;
-    max-height: 50px;
-    margin-right: 2px;
+    max-width: 20px;
+    max-height: 20px;
+    margin-right: 15px;
 }
 
 .user-info {
     border: 2px solid black;
+}
+
+.demo {
+    border:1px solid #C0C0C0;
+    border-collapse:collapse;
+    padding:5px;
+}
+.demo th {
+    border:1px solid #C0C0C0;
+    padding:5px;
+    background:#F0F0F0;
+}
+.demo td {
+    border:1px solid #C0C0C0;
+    padding:5px;
 }

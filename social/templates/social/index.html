@@ -4,29 +4,44 @@
 {% block content %}
 <div class="row">
   <div class="col-sm-8">
-    Feed List
+    <h2>Users List</h2>
+
+    <ul>
+      <li>a post | date | author | add comment</li>
+      <p>Next page/ Old Page</p>
+    </ul>
   </div>
   <div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 23rem;">
       <div class="card-header">
         <h2>Users List</h2>
       </div>
 
-      <ul class="list-group list-group-flush">
-        {% for user in house_users %}
 
-        <li class="list-group-item">
-        <div class="user-list">
-          <div class="avatar"> <img height="50px" src="{{ user.houseuserprofile.avatar_url }}" /></div>
-          <div class="card-body text-secondary user-info">
-            <h5 class="card-title">{{ user.username }}</h5>
-            <p class="card-text"> Birthday: {{ user.houseuserprofile.birth_date }}</p>
-          </div>
-  </div>
 
-        </li>
-        {% endfor %}
-      </ul>
+      <style>
+
+      </style>
+      <table class="demo">
+        <caption>Users</caption>
+        <thead>
+          <tr>
+            <th colspan="4">User List</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for user in house_users %}
+          <tr>
+ 
+            <td>   <div class="avatar"> <img height="50px" src="{{ user.houseuserprofile.avatar_url }}" /></div></td>
+            <td>{{ user.username }}</td>
+            <td>Birthday: {{ user.houseuserprofile.birth_date }}</td>
+            <td> <button>View Profile</button></td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
     </div>
 
 
