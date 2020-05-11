@@ -3,11 +3,14 @@ from django.contrib.auth.models import User
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from datetime import datetime
+from django.conf import settings
 # Create your models here.
 
 class TextPost(models.Model):
     content = models.TextField(max_length=500)
-
+    post_date = models.DateTimeField(default=datetime.now, verbose_name="Posted on: ")
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False, default=1)
     def __str__(self):
         return self.content
 
