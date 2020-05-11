@@ -1,0 +1,23 @@
+{% extends 'social/base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock title %}
+{% block content %}
+<div class="row">
+    <div class="col-sm">
+   Feed List
+    </div>
+    <div class="col-sm">
+      <h2>{{ user.get_full_name }}</h2>
+<ul>
+  <li>Username: {{ user.username }}</li>
+  <li>bdatre {{ user.profile.birth_date }}</li>
+    <li><img src="{{ user.profile.avatar_url }}" /></li>
+  
+</ul>
+    </div>
+    
+  </div>
+
+{% endblock %}
+
+

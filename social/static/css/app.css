@@ -1,0 +1,66 @@
+.main-logo {
+    width: 200px;
+    margin-right: 6px;
+}
+
+.base-container {
+    margin-top: 20px;
+    padding-top: 50px;
+}
+
+.container {
+        max-width: 1425px;
+}
+
+.hero-img {
+    height: 65vh;
+    min-height: 300px;
+    background: #EDEBED no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-caption {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: grey;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-badge {
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*index*/
+
+.watch-live:after {
+    content: ' \25CF';
+    color: #FF0000;
+    font-size: 20px;
+}
+
+/*Utility classes */
+
+.hidden {
+    display: none;
+}
+
+/* Sticky footer */
+
+body {
+    min-height: 100vh;
+}
