@@ -36,9 +36,10 @@
 .post-card{
     border: 3px solid grey;
     padding: 4px;
+    margin-bottom: 5px;
 }
 
 .post-card:hover{
-    box-shadow: 4px 4px #a39797;
+    box-shadow: 2px 2px #a39797;
     padding: 4px;
 }

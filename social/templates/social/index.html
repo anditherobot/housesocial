@@ -10,17 +10,24 @@
       <li>a post | date | author | add comment</li>
       <p>Next page/ Old Page</p>
 
-      {% for post in posts %}
+      {% for post in feed %}
       <li style="list-style: none;">
-      <div class="post-card">
-        <div class="card-body">{{post.content}}</div> 
-        <div class="card-footer text-muted">
-      <p><strong>{{post.author}}</strong> Posted on: {{post.post_date}}</p>
-    
-  </div>
-       
-      </div>
-      
+        <div class="post-card">
+          {% if post.post_type == 'text' %}
+          <div class="card-body">{{post.content}}</div>
+          {% elif post.post_type == 'image' %}
+          <div class="card-body"><img height="160px" src="{{ post.cover.url}}" alt="{{ post.title }}"></div>
+
+          {% else %}
+          No posts
+          {% endif %}
+          <div class="card-footer text-muted">
+            <p><strong>{{post.author}}</strong> Posted on: {{post.post_date}}</p>
+
+          </div>
+
+        </div>
+
       </li>
       {% endfor %}
 

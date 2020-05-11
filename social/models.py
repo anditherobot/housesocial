@@ -11,8 +11,22 @@ class TextPost(models.Model):
     content = models.TextField(max_length=500)
     post_date = models.DateTimeField(default=datetime.now, verbose_name="Posted on: ")
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False, default=1)
+    post_type = models.CharField(default="text", max_length=50)
     def __str__(self):
         return self.content
+
+
+class ImagePost(models.Model):
+    title = models.TextField()
+    post_date = models.DateTimeField(default=datetime.now, verbose_name="Posted on: ")
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False, default=1)
+    cover = models.ImageField(upload_to='images/')
+    post_type = models.CharField(default="image", max_length=50)
+
+    def __str__(self):
+        return self.title
+
+
 
 
 
