@@ -7,8 +7,36 @@
     Feed List
   </div>
   <div class="col-sm-4">
-    Users List
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        <h2>Users List</h2>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        {% for user in house_users %}
+
+        <li class="list-group-item">
+        <div class="user-list">
+          <div class="avatar"> <img height="50px" src="{{ user.houseuserprofile.avatar_url }}" /></div>
+          <div class="card-body text-secondary user-info">
+            <h5 class="card-title">{{ user.username }}</h5>
+            <p class="card-text"> Birthday: {{ user.houseuserprofile.birth_date }}</p>
+          </div>
   </div>
+
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+
+
+  </div>
+  </li>
+
+
+  </ul>
+</div>
 
 </div>
 
