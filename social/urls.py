@@ -1,7 +1,8 @@
 from django.urls import path
 
-from social.views import IndexView
+from social.views import *
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
+    path('', index, name='index'),
+    path('page<int:page>/', index, name='index'),
 ]

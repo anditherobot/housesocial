@@ -7,10 +7,10 @@
     <h2>Users List</h2>
 
     <ul>
-      <li>a post | date | author | add comment</li>
-      <p>Next page/ Old Page</p>
+      <li>add comment</li>
 
-      {% for post in feed %}
+
+      {% for post in feed.object_list %}
       <li style="list-style: none;">
         <div class="post-card">
           {% if post.post_type == 'text' %}
@@ -23,13 +23,34 @@
           {% endif %}
           <div class="card-footer text-muted">
             <p><strong>{{post.author}}</strong> Posted on: {{post.post_date}}</p>
-
+            <p>add comment</p>
           </div>
 
         </div>
 
       </li>
       {% endfor %}
+      <div class="pagination">
+        <span class="step-links">
+          {% if feed.has_previous %}
+          <a class="btn btn-success" href="?page=1">&laquo; first</a>
+           <span class="current">
+            Page {{ feed.number }} of {{ feed.paginator.num_pages }}.
+          </span>
+          <a class="btn btn-success" href="?page={{ feed.previous_page_number }}">previous</a>
+          {% endif %}
+
+         
+
+          {% if feed.has_next %}
+          <a class="btn btn-success" href="?page={{ feed.next_page_number }}">next</a>
+           <span class="current">
+            Page {{ feed.number }} of {{ feed.paginator.num_pages }}.
+          </span>
+          <a class="btn btn-success" href="?page={{ feed.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+        </span>
+      </div>
 
     </ul>
   </div>
