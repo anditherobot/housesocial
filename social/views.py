@@ -4,16 +4,21 @@ from django.contrib.auth.models import User
 from django.views.generic import TemplateView, ListView
 from .models import TextPost
 from .data import feed
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index (request):
     template_name = 'social/index.html'
     feed_list = feed.get_feed_data()
+    page = request.GET.get('page', 1)
     paginator = Paginator(feed_list, 3)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
     
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
     context = {
             'house_users':  User.objects.all(),
             'feed': page_obj

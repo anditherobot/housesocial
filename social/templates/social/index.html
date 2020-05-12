@@ -30,23 +30,20 @@
 
       </li>
       {% endfor %}
-      <div class="pagination">
+      <div class="pagination ">
         <span class="step-links">
           {% if feed.has_previous %}
           <a class="btn btn-success" href="?page=1">&laquo; first</a>
-           <span class="current">
-            Page {{ feed.number }} of {{ feed.paginator.num_pages }}.
-          </span>
+         
           <a class="btn btn-success" href="?page={{ feed.previous_page_number }}">previous</a>
           {% endif %}
 
-         
-
-          {% if feed.has_next %}
-          <a class="btn btn-success" href="?page={{ feed.next_page_number }}">next</a>
-           <span class="current">
+          <span class="current">
             Page {{ feed.number }} of {{ feed.paginator.num_pages }}.
           </span>
+          {% if feed.has_next %}
+          <a class="btn btn-success" href="?page={{ feed.next_page_number }}">next</a>
+          
           <a class="btn btn-success" href="?page={{ feed.paginator.num_pages }}">last &raquo;</a>
           {% endif %}
         </span>

@@ -43,3 +43,8 @@
     box-shadow: 2px 2px #a39797;
     padding: 4px;
 }
+
+.navigation-container {
+    display: flex;
+    flex-direction: row;
+}
