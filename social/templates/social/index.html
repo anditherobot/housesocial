@@ -78,7 +78,7 @@
             </td>
             <td>{{ user.username }}</td>
             <td>Birthday: {{ user.houseuserprofile.birth_date }}</td>
-            <td> <button>View Profile</button></td>
+            <td> <a class="btn btn-success" href="{% url 'profile_others' user.username %}">View Profile</a></td>
           </tr>
           {% endfor %}
         </tbody>

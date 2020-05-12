@@ -31,5 +31,11 @@ def index (request):
 
 
 
-def profile(request):
+def profile_self(request):
     return render(request, 'social/profile.html')
+
+def profile_others(request, username):
+    template_name = ('social/profile-others.html')
+    user = User.objects.get(username= username)
+    context = {"user": user}
+    return render(request, template_name, context)
