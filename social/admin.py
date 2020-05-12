@@ -29,7 +29,7 @@ class UserAdmin(BaseUserAdmin):
 # Re-register UserAdmin
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-
+admin.site_header = 'House Administration'
 
 admin.site.register(TextPost)
 admin.site.register(ImagePost)

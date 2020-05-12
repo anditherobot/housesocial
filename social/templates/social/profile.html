@@ -2,19 +2,21 @@
 {% load static %}
 {% block title %}{{title}}{% endblock title %}
 {% block content %}
-
+ <h2>Profile</h2>
 <div class="row">
-  <div class="col-sm">
-    Feed List
-  </div>
-  <div class="col-sm">
-    <h2>{{ user.get_full_name }}</h2>
+ 
+  <div class="col-sm-3">
+ <h3> Account Info</h3>
+  <h2>{{ user.get_full_name }}</h2>
     <ul>
       <li>Username: {{ user.username }}</li>
-      <li>bdatre {{ user.profile.birth_date }}</li>
+      <li>Birthdate {{ user.houseuserprofile.birth_date }}</li>
       <li><img src="{{ user.profile.avatar_url }}" /></li>
 
     </ul>
+  </div>
+  <div class="col-sm-9">
+   <h2>Actions</h2>
   </div>
 
 </div>
