@@ -4,4 +4,7 @@ from django.http import HttpResponse
 
 def index(request):
     template_name = 'core/index.html'
-    return render(request, template_name)
+    title = "andi the robot"
+
+    context = {'title': title}
+    return render(request, template_name, context)

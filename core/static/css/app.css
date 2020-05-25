@@ -1,50 +1,21 @@
-.user-list {
+h1 {
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+.intro-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.user-list>.avatar {
-    max-width: 20px;
-    max-height: 20px;
-    margin-right: 15px;
-}
-
-.user-info {
-    border: 2px solid black;
-}
-
-.demo {
-    border:1px solid #C0C0C0;
-    border-collapse:collapse;
-    padding:5px;
-}
-.demo th {
-    border:1px solid #C0C0C0;
-    padding:5px;
-    background:#F0F0F0;
-}
-.demo td {
-    border:1px solid #C0C0C0;
-    padding:5px;
+    flex: row;
+    width: 100%;
 }
 
 
 
-/*Posts */
+.profile-img{
 
-.post-card{
-    border: 3px solid grey;
-    padding: 4px;
-    margin-bottom: 5px;
-}
+border: 2px solid black;
+height: 200px;
+width: 200px;
+background-color: grey;
 
-.post-card:hover{
-    box-shadow: 2px 2px #a39797;
-    padding: 4px;
-}
-
-.navigation-container {
-    display: flex;
-    flex-direction: row;
 }
