@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock title %}
+{% block content %}
+
+<div class="row">
+<div class="col-sm-12">
+<div class="intro-container">
+  <img class="mr-2 mt-2 profile-img" src="{{user.coreuserprofile.profile_image.url}}" />
+  <h1 class="mb-0">Andi <span class="text-primary">The Robot</span></h1>
+</div>
+
+</div>
+
+<div class="row">
+  <div class="col-sm-8">
+  
+      </div>
+</div>
+
+
+
+{% endblock %}
