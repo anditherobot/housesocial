@@ -39,3 +39,7 @@ def profile_others(request, username):
     user = User.objects.get(username= username)
     context = {"user": user}
     return render(request, template_name, context)
+
+
+def messages(request, did):
+    return HttpResponse("id", did)
